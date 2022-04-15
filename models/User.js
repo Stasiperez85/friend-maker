@@ -1,20 +1,43 @@
 const { Schema, model } = require('mongoose');
+// const dateFormat = require('../utils/dateFormat');
 
-const UserSchema = new Schema({
-    username: {
-        type: String,
-        unique: true,
-        required: 'Username is required',
-        trim: true,
+const UserSchema = new Schema(
+    {
+        username: {
+            type: String,
+            unique: true,
+            required: 'Username is required',
+            trim: true,
+        },
+        email: {
+            type: String,
+            required: 'Password is required',
+            unique: true,
+            match: [/.+@.+\..+/]
+        },
+        // thoughts: [
+        //     {
+        //         type: Schema.Types.ObjectId,
+        //         ref: 'Thought'
+        //     }
+        // ],
+        // friends: [{
+        //     type: Schema.Types.ObjectId,
+        //     ref: 'User'
+        // }],
     },
-    email: {
-        type: String,
-        required: 'Password is required',
-        unique: true,
-        match: [/.+@.+\..+/, 'Please enter a valid email address']
-    },
-    thoughts: [],
-    friends: []
+    // {
+    //     toJSON: {
+    //         virtuals: true,
+    //         getters: true
+    //     }
+    //     // prevents virtuals from creating duplicate of _id as `id`
+    // }
+);
+
+// get total count of friends and replies on retrieval
+UserSchema.virtual('friendCount').get(function () {
+    return this.friends.length;
 });
 
 // create the User model using the UserSchema

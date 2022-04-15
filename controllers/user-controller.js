@@ -30,7 +30,7 @@ const userController = {
     // createUser
     createUser({ body }, res) {
         User.create(body)
-            .then(dbPizzaData => res.json(dbPizzaData))
+            .then(dbUserData => res.json(dbUserData))
             .catch(err => res.status(400).json(err));
     },
     // update User by id
