@@ -15,24 +15,24 @@ const UserSchema = new Schema(
             unique: true,
             match: [/.+@.+\..+/]
         },
-        // thoughts: [
-        //     {
-        //         type: Schema.Types.ObjectId,
-        //         ref: 'Thought'
-        //     }
-        // ],
-        // friends: [{
-        //     type: Schema.Types.ObjectId,
-        //     ref: 'User'
-        // }],
+        thoughts: [
+            {
+                type: Schema.Types.ObjectId,
+                ref: 'Thought'
+            }
+        ],
+        friends: [{
+            type: Schema.Types.ObjectId,
+            ref: 'User'
+        }],
     },
-    // {
-    //     toJSON: {
-    //         virtuals: true,
-    //         getters: true
-    //     }
-    //     // prevents virtuals from creating duplicate of _id as `id`
-    // }
+    {
+        toJSON: {
+            virtuals: true,
+            getters: true
+        },
+        id: false
+    }
 );
 
 // get total count of friends and replies on retrieval

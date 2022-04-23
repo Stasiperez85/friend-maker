@@ -24,10 +24,12 @@ const ThoughtSchema = new Schema(
     },
     {
         toJSON: {
-            virtuals: true,
-            getters: true
-        }
-    }
+          virtuals: true,
+          getters: true
+        },
+        id: false
+      }
+    
 );
 
 // get total count of comments and replies on retrieval
