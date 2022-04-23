@@ -16,12 +16,18 @@ router
   .get(getAllThought)
 
 router
+  .route('/:userId')
+
+router
   .route('/:userId').post(createThought);
 
-router.route('/:thoughtId/').post(createReaction)
+router
+  .route('/:thoughtId/reactions')
+  .post(createReaction)
 
 // /api/thought-routes/reactionId
-router.route('/:thoughtId/:reactionId').delete(deleteReaction);
+router.route('/:thoughtId/reactions/:reactionId')
+  .delete(deleteReaction);
 
 // Set up GET one, PUT, and DELETE at /api/thought/:id
 router
