@@ -23,8 +23,7 @@ Clink link to view the video walkthrough.
 ![Screen Shot 2022-04-24 at 11 49 44 AM](https://user-images.githubusercontent.com/78401136/164989669-88664ec5-c189-45de-8802-3bc7a4451db1.png)
 
 
-Credits YouT![Uploading Screen Shot 2022-04-24 at 11.48.31 AM.png…]()
-ube, google, TA’s and tutor
+Credits YouTube, google, TA’s and tutor
 
 Github Stasiperez85
 
