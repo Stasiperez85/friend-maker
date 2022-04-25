@@ -79,7 +79,7 @@ const thoughtController = {
     },
     // update Thought by id
     updateThought({ params, body }, res) {
-        Thought.findOneAndUpdate({ _id: params.id }, body, { new: true })
+        Thought.findOneAndUpdate({ _id: params.thoughtId }, body, { new: true })
             .then(dbThoughtData => {
                 if (!dbThoughtData) {
                     res.status(404).json({ message: 'No Thought found with this id!' });
@@ -92,20 +92,10 @@ const thoughtController = {
 
     // delete Thought
     deleteThought({ params }, res) {
-        Thought.findOneAndDelete({ _id: params.ThoughtId })
-            .then(deletedThought => {
-                if (!deletedThought) {
+        Thought.findOneAndDelete({ _id: params.thoughtId })
+            .then(dbThoughtData => {
+                if (!dbThoughtData) {
                     return res.status(404).json({ message: 'No Thought with this id!' });
-                }
-                return User.findOneAndUpdate(
-                    { _id: params.UserId },
-                    { $pull: { Thoughts: params.ThoughtId } },
-                    { new: true }
-                );
-            })
-            .then(dbUserData => {
-                if (!dbUserData) {
-                    res.status(404).json({ message: 'No User found with this id!' });
                     return;
                 }
                 res.json(dbUserData);
