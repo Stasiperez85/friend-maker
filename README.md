@@ -9,7 +9,9 @@ Installation Usage Credits Installation This is created using the command-line i
 
 Usage
 
-Clink link to view the video walkthrough. 
+Click below links to view the video walkthrough. 
+https://drive.google.com/file/d/17ZAF82pBkAsQaKo1WpIU3OhYNReJ_HGA/view
+https://drive.google.com/file/d/1oOOdYnuDsemu_KgPVA7_CkEQo63cweIi/view
 
 
 ![Screen Shot 2022-04-24 at 11 47 56 AM](https://user-images.githubusercontent.com/78401136/164989645-88786435-0a48-408b-8cf3-1a3be4dd4a7d.png)
